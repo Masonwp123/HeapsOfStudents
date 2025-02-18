@@ -13,5 +13,9 @@ Date::Date() {
 
 void Date::init(std::string inDate) {
     //parse and stuff
-    std::cout << inDate << std::endl;
+}
+
+void Date::printDate() {
+    //print
+    std::cout << "date: " << month << " " << day << " " << year << std::endl;
 }

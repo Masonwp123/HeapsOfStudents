@@ -15,5 +15,13 @@ Student::Student() {
 
 void Student::init(std::string string) {
     //parse and stuff
-    std::cout << string << std::endl;
+}
+
+void Student::printStudent() {
+    //print
+    std::cout << "name: " << firstName << " " << lastName << std::endl;
+    address.printAddress();
+    graduation.printDate();
+    birthday.printDate();
+    std::cout << "credits: " << credits << std::endl;
 }

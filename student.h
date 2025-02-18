@@ -19,6 +19,8 @@ public:
     Student();
     
     void init(std::string string);
+
+    void printStudent();
     
 };
 

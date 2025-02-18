@@ -15,6 +15,8 @@ public:
 
     void init(std::string inDate);
 
+    void printDate();
+
 };
 
 #endif

@@ -8,11 +8,15 @@ Address::Address() {
     street = "none";
     city = "none";
     state = "none";
-    zip = -1;
+    zip = "-1";
 
 }
 
 void Address::init(std::string inStreet, std::string inCity, std::string inState, std::string inZip) {
     //parse and stuff
-    std::cout << inStreet << inCity << inState << inZip << std::endl;
+}
+
+void Address::printAddress() {
+    //print
+    std::cout << "Address: " << street << " " << city << " " << state << " " << zip << std::endl;
 }
