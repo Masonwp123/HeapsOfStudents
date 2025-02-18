@@ -1,4 +1,4 @@
-all = main.cpp
+all = main.cpp student.cpp student.h address.cpp address.h date.cpp date.h
 out = main.o
 
 $(out): $(all)
