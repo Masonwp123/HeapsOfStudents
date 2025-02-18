@@ -7,16 +7,18 @@
 
 class Student {
 
+    std::string sStudent;
     std::string firstName;
     std::string lastName;
-    Address address;
-    Date birthday;
-    Date graduation;
+    Address* address;
+    Date* birthday;
+    Date* graduation;
     int credits;
 
 public:
 
     Student();
+    ~Student();
     
     void init(std::string string);
 

@@ -9,8 +9,17 @@ Student::Student() {
     
     firstName = "none";
     lastName = "none";
+    birthday = new Date();
+    graduation = new Date();
+    address = new Address();
     credits = -1;
 
+}
+
+Student::~Student() {
+    delete birthday;
+    delete graduation;
+    delete address;
 }
 
 void Student::init(std::string string) {
@@ -20,8 +29,8 @@ void Student::init(std::string string) {
 void Student::printStudent() {
     //print
     std::cout << "name: " << firstName << " " << lastName << std::endl;
-    address.printAddress();
-    graduation.printDate();
-    birthday.printDate();
+    address->printAddress();
+    graduation->printDate();
+    birthday->printDate();
     std::cout << "credits: " << credits << std::endl;
 }
