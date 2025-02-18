@@ -1,108 +1,69 @@
-# Object Oriented Horse Race
-Get ready... To LOSE... AGAIN!!!
-
-![Diagram](CodeDiagram.svg)
+# Heaps Of Students; Database Management
+Boring... but useful!
 
 ## Classes
 
 ### **main.cpp**
 ```
-make variable race of type Race
-call Race.run()
 ```
 
-### **horse.h**
+### **date.h**
 ```
-class Horse:
-
-+Horse()
-+void init(int inId, int inTrackLength)
-+void advance()
-+void printLane()
-+bool isWinner()
-
--int position
--int trackLength
--int id
+class Date:
+    -int month
+    -int day
+    -int year
+    
+    +Date()
+    +void init(string date)
 ```
 
-### **horse.cpp**
+### **date.cpp**
 
-**Horse()**
+**Date()**
 ```
-function Horse():
-    set position to 0
-    set trackLength to 0
-    set id to -1
 ```
 
 **init**
 ```
-function init(int inId, int inTrackLength):
-    set id to inId
-    set trackLength to inTrackLength
 ```
 
-**advance**
+### **address.h**
 ```
-function advance():
-    make int random with randomfloat(0.0, 2.0)
-    round random to int    
-    add random to position
+class Address:
+    -string street
+    -string city
+    -string state
+    -int zip
+
+    +Address()
+    +void init(string street, string city, string state, int zip)
 ```
 
-**printLane**
+### **address.cpp**
+
+**Address()**
 ```
-function printLane():
-    for 0 to TRACK_LENGTH:
-        if loop index is equal to position:
-            print id
-            continue
-        print "."
 ```
 
-**isWinner**
+**init**
 ```
-function isWinner():
-    return position is greater than or equal to trackLength + 1
 ```
 
-### **race.h**
+### **student.h**
 ```
-class Race:
+class Student:
+    -string firstName
+    -string lastName
+    -Address address
+    -Date birthday
+    -Date graduation
+    -int credits
 
-+Race()
-+void run()
-
--int TRACK_LENGTH
--int MAX_HORSES
--Horse horses[Max_HORSES]
-```
-
-### **race.cpp**
-
-**Race()**
-```
-function Race():
-    for 0 to MAX_HORSES:
-        Horse horse = horses[loop index]
-        call horse.init(loop index, TRACK_LENGTH)
-        call horse.printLane() 
+    +Student()
+    +void init(string string)
 ```
 
-**run**
+### **student.cpp**
 ```
-function run():
-    set keepGoing to true
-    while keepGoing:
-        ask user for input to continue
-        for each horse in horses:
-            call horse.advance()
-            call horse.printLane()
-            if call horse.isWinner():
-                set keepGoing to false
-    for each horse in horses:
-        if call horse.isWinner():
-            print "Horse " + loop index + " Won!"
-            ask user for input to end
 ```
