@@ -31,3 +31,8 @@ void Student::printStudent() {
     birthday->printDate();
     std::cout << "credits: " << credits << std::endl;
 }
+
+std::string Student::getLastFirst() {
+    //just return last for now (to test)
+    return lastName;
+}

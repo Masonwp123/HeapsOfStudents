@@ -23,6 +23,8 @@ public:
     void init(std::string string);
 
     void printStudent();
+
+    std::string getLastFirst();
     
 };
 
