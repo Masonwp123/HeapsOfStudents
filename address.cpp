@@ -1,10 +1,7 @@
 #include <iostream>
 #include "address.h"
 
-Address::Address() {
-
-    //make it obvious when address is not initialized
-    
+Address::Address() {    
     street = "none";
     city = "none";
     state = "none";

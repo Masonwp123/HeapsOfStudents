@@ -1,10 +1,7 @@
 #include <iostream>
 #include "date.h"
 
-Date::Date() {
-
-    //default date is January 1st, 1970
-    
+Date::Date() {    
     sDate = "01/01/1970";
     month = 1;
     day = 1;

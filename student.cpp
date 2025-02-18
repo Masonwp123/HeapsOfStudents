@@ -3,10 +3,7 @@
 #include "date.h"
 #include "address.h"
 
-Student::Student() {
-
-    //make it obvious when student is not initialized
-    
+Student::Student() {    
     firstName = "none";
     lastName = "none";
     birthday = new Date();
