@@ -13,7 +13,7 @@ class Student {
     Address* address;
     Date* birthday;
     Date* graduation;
-    int credits;
+    int creditHours;
 
 public:
 
@@ -25,6 +25,12 @@ public:
     void printStudent();
 
     std::string getLastFirst();
+    
+    std::string getFirstName();
+    
+    std::string getLastName();
+
+    int getCreditHours();
     
 };
 

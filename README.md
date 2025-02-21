@@ -62,6 +62,10 @@ class Student:
 
     +Student()
     +void init(string string)
+    +string getLastFirst()
+    +string getFirstName()
+    +string getLastName()
+    +int getCreditHours()
 ```
 
 ### **student.cpp**
