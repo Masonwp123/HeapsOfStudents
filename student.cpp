@@ -27,9 +27,6 @@ void Student::init(std::string string) {
 
     ss.clear();
     ss.str(sStudent);
-
-    //we have 9 data values
-    //string, string, string, string, string, string, date, date, int
     
     //get first and last name for student
     getline(ss, firstName, ',');
@@ -78,8 +75,8 @@ void Student::init(std::string string) {
 void Student::printStudent() {
     std::cout << "name: " << firstName << " " << lastName << std::endl;
     address->printAddress();
-    graduation->printDate();
     birthday->printDate();
+    graduation->printDate();
     std::cout << "creditHours: " << creditHours << std::endl;
 }
 
