@@ -10,10 +10,12 @@ Address::Address() {
 }
 
 void Address::init(std::string inStreet, std::string inCity, std::string inState, std::string inZip) {
-    //parse and stuff
+    street = inStreet;
+    city = inCity;
+    state = inState;
+    zip = inZip;
 }
 
 void Address::printAddress() {
-    //print
     std::cout << "Address: " << street << " " << city << " " << state << " " << zip << std::endl;
 }

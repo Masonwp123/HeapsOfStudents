@@ -21,12 +21,12 @@ Student::~Student() {
 }
 
 void Student::init(std::string string) {
-    //parse and stuff
+    sStudent = string;
 
     std::stringstream ss;
-    std::stringstream converter;
 
-    ss.str(string);
+    ss.clear();
+    ss.str(sStudent);
 
     //we have 9 data values
     //string, string, string, string, string, string, date, date, int
@@ -76,7 +76,6 @@ void Student::init(std::string string) {
 }
 
 void Student::printStudent() {
-    //print
     std::cout << "name: " << firstName << " " << lastName << std::endl;
     address->printAddress();
     graduation->printDate();
@@ -85,8 +84,10 @@ void Student::printStudent() {
 }
 
 std::string Student::getLastFirst() {
-    //just return last for now (to test)
-    return lastName;
+    std::stringstream ss;
+    ss.clear();
+    ss << lastName << ", " << firstName;
+    return ss.str();
 }
 
 std::string Student::getFirstName() {
