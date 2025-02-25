@@ -5,6 +5,46 @@ Boring... but useful!
 
 ### **main.cpp**
 ```
+function main():
+    open file "students.csv" as inFile
+
+    vector<Student> students
+
+    for each line in inFile:
+        Student* student = new Student()
+        call student.init(line)
+        students.add(student)
+
+    print "0) quit"
+    print "1) print all student names"
+    print "2) print all student data"
+    print "3) find a student"
+
+    bool bIsRunning = true
+    while bIsRunning:
+        print "Please choose 0-3:"
+
+        int selection = get input as int
+
+        switch selection:
+            case 0:
+                bIsRunning = false
+                break
+            case 1:
+                for each student in students:
+                    print call student.getLastFirst()
+            case 2:
+                for each student in students:
+                    call student.printStudent()
+            case 3:
+                string queryName = get string as input
+
+                for each student in students:
+                    if call student.getFirstName() equals queryName:
+                        student.printStudent()
+            default:
+                print "invalid input"
+                break
 ```
 
 ### **date.h**
@@ -47,7 +87,7 @@ function init(string inDate):
 **printDate**
 ```
 function printDate():
-    print "Date: " + month + " " + day + " " + year
+    print sDate
 ```
 
 ### **address.h**
@@ -86,7 +126,7 @@ function init(string inStreet, string inCity, string inState, string inZip):
 **printAddress**
 ```
 function printAddress():
-    print "Address: " + street + " " + city + " " + state + " " + zip
+    print street + " " + city + " " + state + " " + zip
 ```
 
 ### **student.h**
@@ -157,11 +197,11 @@ function init(string string):
 **printStudent**
 ```
 function printStudent():
-    print "Name: " + firstName + " " + lastName
+    print lastName + ", " + firstName
     call address.printAddress()
     call birthday.printDate()
     call graduation.printDate()
-    print "creditHours: " + creditHours
+    print "Credits: " + creditHours
 ```
 
 **getLastFirst**

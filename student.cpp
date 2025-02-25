@@ -29,7 +29,7 @@ void Student::init(std::string string) {
     ss.str(sStudent);
     
     //get first and last name for student
-    getline(ss, firstName, ',');
+    getline(ss, firstName, ','); //TODO: spaces in names and such causes errors when querying
     getline(ss, lastName, ',');
 
     //get address strings
@@ -73,11 +73,15 @@ void Student::init(std::string string) {
 }
 
 void Student::printStudent() {
-    std::cout << "name: " << firstName << " " << lastName << std::endl;
+    std::cout << "--------------------" << std::endl;
+    std::cout << getLastFirst() << std::endl;
+    std::cout << "Address: ";
     address->printAddress();
+    std::cout << "DOB: ";
     birthday->printDate();
+    std::cout << "Grad: ";
     graduation->printDate();
-    std::cout << "creditHours: " << creditHours << std::endl;
+    std::cout << "Credits: " << creditHours << std::endl;
 }
 
 std::string Student::getLastFirst() {

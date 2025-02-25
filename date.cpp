@@ -49,6 +49,5 @@ void Date::init(std::string inDate) {
 }
 
 void Date::printDate() {
-    std::cout << "sDate: " << sDate << std::endl;
-    std::cout << "date: " << month << " " << day << " " << year << std::endl;
+    std::cout << sDate << std::endl;
 }
