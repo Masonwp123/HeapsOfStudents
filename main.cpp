@@ -27,6 +27,7 @@ int main(){
   //create array of students
   std::vector<Student*> students;
 
+  //add student from line
   std::string item;
   while (getline(inFile, item)) {
     Student* student = new Student();
@@ -46,9 +47,10 @@ int main(){
 }
 
 void printMenu(std::vector<Student*>& students) {
-
   bool bIsRunning = true;
   while (bIsRunning) {
+    
+    //print options
     std::cout << std::endl;
     std::cout << "0) quit" << std::endl;
     std::cout << "1) print all student names" << std::endl;
@@ -113,9 +115,10 @@ void findStudent(std::vector<Student*>& students) {
 }
 
 void sortStudents(std::vector<Student*>& students) {
-
   bool bIsRunning = true;
   while (bIsRunning) {
+
+    //print options
     std::cout << std::endl;
     std::cout << "0) back" << std::endl;
     std::cout << "1) sort by first name" << std::endl;
