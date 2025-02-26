@@ -4,6 +4,8 @@ Boring... but useful!
 ## Classes
 
 ### **main.cpp**
+
+**main()**
 ```
 function main():
     open file "students.csv" as inFile
@@ -15,10 +17,17 @@ function main():
         call student.init(line)
         students.add(student)
 
+    call printMenu()
+```
+
+**printMenu**
+```
+function printMenu():
     print "0) quit"
     print "1) print all student names"
     print "2) print all student data"
     print "3) find a student"
+    print "4) sort students"
 
     bool bIsRunning = true
     while bIsRunning:
@@ -31,17 +40,91 @@ function main():
                 bIsRunning = false
                 break
             case 1:
-                for each student in students:
-                    print call student.getLastFirst()
+                call printStudentNames(students)
+                break
             case 2:
-                for each student in students:
-                    call student.printStudent()
+                call printStudents(students)
+                break
             case 3:
-                string queryName = get string as input
+                call findStudent(students)
+                break
+            case 4:
+                call sortStudents(students)
+                break
+            default:
+                print "invalid input"
+                break
+```
 
-                for each student in students:
-                    if call student.getFirstName() equals queryName:
-                        student.printStudent()
+**printStudents**
+```
+function printStudents(vector<Student*> students):
+    for each student in students:
+        call student.printStudent()
+```
+
+**printStudentNames**
+```
+function printStudents(vector<Student*> students):
+    for each student in students:
+        print call student.getLastFirst()
+```
+
+**findStudent**
+```
+function findStudent(vector<Student*> students):
+    string queryName = get string as input
+
+    for each student in students:
+        if call student.getFirstLast() == queryName:
+            call student.printStudent()
+```
+
+**sortByFirstName**
+```
+function sortByFirstName(Student& s1, Student& s2):
+    return call s1.getFirstName() < call s2.getFirstName()
+```
+
+**sortByLastName**
+```
+function sortByLastName(Student& s1, Student& s2):
+    return call s1.getLastName() < call s2.getLastName()
+```
+
+**sortByCredits**
+```
+function sortByCredits(Student& s1, Student& s2):
+    return call s1.getCreditHours() > call s2.getCreditHours()
+```
+
+**sortStudents**
+```
+function sortStudents(vector<Student*> students):
+    print "0) cancel"
+    print "1) sort by first name"
+    print "2) sort by last name"
+    print "3) sort by credit hours"
+
+    bool bIsRunning = true
+    while bIsRunning:
+        print "Please choose 0-2:"
+
+        int selection = get input as int
+
+        switch selection:
+            case 0:
+                bIsRunning = false
+                break
+            case 1:
+                call sort(students, sortByFirstName)
+                break
+            case 2:
+                call sort(students, sortByLastName)
+                break
+            case 3:
+                call sort(students, sortByCredits)
+                break
             default:
                 print "invalid input"
                 break
