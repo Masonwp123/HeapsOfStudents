@@ -17,12 +17,12 @@ function main():
         call student.init(line)
         students.add(student)
 
-    call printMenu()
+    call printMenu(students)
 ```
 
 **printMenu**
 ```
-function printMenu():
+function printMenu(std::vector<Student*>& students):
     print "0) quit"
     print "1) print all student names"
     print "2) print all student data"
@@ -58,21 +58,21 @@ function printMenu():
 
 **printStudents**
 ```
-function printStudents(vector<Student*> students):
+function printStudents(vector<Student*>& students):
     for each student in students:
         call student.printStudent()
 ```
 
 **printStudentNames**
 ```
-function printStudents(vector<Student*> students):
+function printStudents(vector<Student*>& students):
     for each student in students:
         print call student.getLastFirst()
 ```
 
 **findStudent**
 ```
-function findStudent(vector<Student*> students):
+function findStudent(vector<Student*>& students):
     string queryName = get string as input
 
     for each student in students:
@@ -82,19 +82,19 @@ function findStudent(vector<Student*> students):
 
 **sortByFirstName**
 ```
-function sortByFirstName(Student& s1, Student& s2):
+function sortByFirstName(Student*& s1, Student8& s2):
     return call s1.getFirstName() < call s2.getFirstName()
 ```
 
 **sortByLastName**
 ```
-function sortByLastName(Student& s1, Student& s2):
+function sortByLastName(Student*& s1, Student*& s2):
     return call s1.getLastName() < call s2.getLastName()
 ```
 
 **sortByCredits**
 ```
-function sortByCredits(Student& s1, Student& s2):
+function sortByCredits(Student*& s1, Student*& s2):
     return call s1.getCreditHours() > call s2.getCreditHours()
 ```
 
