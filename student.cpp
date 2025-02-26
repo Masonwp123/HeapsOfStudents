@@ -87,7 +87,7 @@ void Student::printStudent() {
 std::string Student::getLastFirst() {
     std::stringstream ss;
     ss.clear();
-    ss << lastName << ", " << firstName;
+    ss << lastName << ", " << firstName << ", " << creditHours;
     return ss.str();
 }
 

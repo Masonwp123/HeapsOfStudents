@@ -49,6 +49,7 @@ void printMenu(std::vector<Student*>& students) {
 
   bool bIsRunning = true;
   while (bIsRunning) {
+    std::cout << std::endl;
     std::cout << "0) quit" << std::endl;
     std::cout << "1) print all student names" << std::endl;
     std::cout << "2) print all student data" << std::endl;
@@ -96,7 +97,7 @@ void printStudentNames(std::vector<Student*>& students) {
 }
 
 void findStudent(std::vector<Student*>& students) {
-  std::cout << std::endl << "Enter a last and first name: " << std::endl;
+  std::cout << std::endl << "Enter a last name: " << std::endl;
 
   std::string queryName;
 
@@ -105,7 +106,7 @@ void findStudent(std::vector<Student*>& students) {
   std::getline(std::cin, queryName);
 
   for (Student*& student : students) {
-    if (student->getLastName() == queryName) {
+    if (student->getLastName().find(queryName) != std::string::npos) {
       student->printStudent();
     }
   }
@@ -115,6 +116,7 @@ void sortStudents(std::vector<Student*>& students) {
 
   bool bIsRunning = true;
   while (bIsRunning) {
+    std::cout << std::endl;
     std::cout << "0) back" << std::endl;
     std::cout << "1) sort by first name" << std::endl;
     std::cout << "2) sort by last name" << std::endl;
